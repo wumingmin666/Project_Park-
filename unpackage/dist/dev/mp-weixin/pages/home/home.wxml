@@ -1,0 +1,1 @@
+<view><block wx:for="{{parks}}" wx:for-item="park" wx:for-index="__i0__" wx:key="pid"><uni-show-map vue-id="{{'1da55560-1-'+__i0__}}" name="{{park.name}}" picture="{{park.picture}}" url="{{park.url}}" placeDescribe="{{park.placeDescribe}}" bind:__l="__l"></uni-show-map></block></view>

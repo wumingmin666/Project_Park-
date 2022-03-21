@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/my/my",
+        "pages/home/home",
+        "pages/myMap/myMap",
+        "pages/map/map",
+        "pages/order/order"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "智慧停车",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#000000",
+        "backgroundColor": "#B9B9B9",
+        "selectedColor": "#C00000",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/myMap/myMap",
+                "text": "我的地图"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "获取地理位置进行定位"
+        }
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

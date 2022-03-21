@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-show-map": "/components/uni-showMap/uni-showMap"
+  }
+}
