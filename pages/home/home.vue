@@ -1,30 +1,29 @@
 <template>
 	<view>
-		<uni-showMap v-for="park in parks" v-bind:key="park.pid" 
-		v-bind:name="park.name" 
-		v-bind:picture="park.picture"
-		v-bind:url="park.url" 
-		v-bind:placeDescribe="park.placeDescribe"></uni-showMap>
+		<view>
+			<u-search shape="round" margin="20rpx" v-model="keyword" @search="search()"></u-search>
+		</view>
+		<view v-for="(park,index) in parks" @click="tomap(index)">
+			<uni-showMap
+			v-bind:name="park.name"  
+			v-bind:placeDescribe="park.placeDescribe">
+			<!-- src之后根据传的图片变化 -->
+			<u--image src="../../static/logo.png" shape="circle" width="300rpx" height="300rpx"></u--image>
+			</uni-showMap>
+		</view>
 	</view>
 </template>
-
 <script>
 	import {mapState} from 'vuex'
-	// import store from '@/store/index.js'
 	export default {
 		data() {
 			return {
 				longitude:"",
 				latitude:"",
 				parks:[],
-				url:""
+				url:"",
+				keyword:""
 			};
-		},
-		methods:{
-			//获取地图
-			getmap(){
-				
-			}
 		},
 		computed:{
 			token(){
@@ -54,8 +53,7 @@
 				}
 			});
 			
-			// #endif
-		
+			// #endif		
 			//向后台请求地图信息
 			uni.request({
 				url:"http://wmmdeboke.top:8081/park/park_descride",
@@ -65,16 +63,25 @@
 					latitude:_this.latitude
 				},
 				success(res) {
-					//先存储信息、展示地图
-					//遍历res.data，展示其中的name、placedescrbe、获取图片
+					//存储地图信息
 					_this.parks=res.data.data;	
-					
 				},
 				fail() {
 					console.log("获取地图失败")
 				}
-			});
-			
+			});		
+		},
+		methods:{
+			tomap(index){
+				let _this=this;
+				uni.navigateTo({
+					url:"../map/map?url="+_this.parks[index].url
+				})
+			},
+			//搜索功能
+			search(){
+		
+			}
 		}
 	}
 </script>

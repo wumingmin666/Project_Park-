@@ -15,7 +15,7 @@
 </script>
 
 <style lang="scss">
-.my-container {
-  height: 100%;
-}
+	.my-container {
+		height: 100%;
+	}
 </style>

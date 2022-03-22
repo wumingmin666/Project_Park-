@@ -6,7 +6,9 @@
             "path" : "pages/login/login",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "智慧停",
+				"backgroundColor":"#007AFF",
+				"navigationBarBackgroundColor":"#007AFF",
                 "enablePullDownRefresh": false
             }
             
@@ -15,8 +17,9 @@
             "path" : "pages/my/my",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#007AFF"
             }
             
         }
@@ -24,7 +27,8 @@
             "path" : "pages/home/home",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "首页",
+				"navigationBarBackgroundColor":"#007AFF",
                 "enablePullDownRefresh": false
             }
             
@@ -33,7 +37,8 @@
             "path" : "pages/myMap/myMap",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的地图",
+				"navigationBarBackgroundColor":"#007AFF",
                 "enablePullDownRefresh": false
             }
             
@@ -42,7 +47,8 @@
             "path" : "pages/map/map",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                // "navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#007AFF",
                 "enablePullDownRefresh": false
             }
             
@@ -51,8 +57,9 @@
             "path" : "pages/order/order",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "订单",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#007AFF"
             }
             
         }
@@ -60,17 +67,18 @@
             "path" : "pages/register/register",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                // "navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#007AFF",
                 "enablePullDownRefresh": false
             }
             
         }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "智慧停车",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"navigationBarTextStyle":"white",
+		"navigationBarTitleText": "智慧停",
+		// "navigationBarBackgroundColor": "#F8F8F8",
+		// "backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"
 		}

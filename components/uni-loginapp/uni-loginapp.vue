@@ -1,23 +1,26 @@
 <template>
 	<view>
-		<u--form labelPosition="" :model="model1" ref="form1">
+		<view class="logo">
+			<u--image src="../../static/logo.png" shape="circle" width="300rpx" height="300rpx"></u--image>
+		</view>
+		<view class="title"><u--text type="primary" text="智慧停" size="30"></u--text></view>
+		<u--form class="form" :model="model1" ref="form1">
 			<u-form-item label="用户名" labelWidth="60" borderBottom ref="item1">
-				<u--input v-model="model1.userInfo.name" border="none" placeholder="请输入用户名"></u--input>
+				<u--input v-model="model1.userInfo.name" border="surround" placeholder="请输入用户名"></u--input>
 			</u-form-item>
 			<u-form-item label="密码" labelWidth="60" borderBottom ref="item2">
-				<u--input v-model="model1.userInfo.password" border="none" placeholder="请输入密码" type="password"></u--input>
+				<u--input v-model="model1.userInfo.password" border="surround" placeholder="请输入密码" type="password"></u--input>
 			</u-form-item>
-		</u--form>			
-		<u-button type="primary" shape="circle" text="点击登录" size="large" @click="login()"></u-button>
-		<br>
-		<br>
-		<h>没有账号？</h><br>
-		<navigator url="/pages/register/register" open-type="navigate">注册</navigator>
-		
-	</view>
-		
+		</u--form>
+		<view class="btn_login">
+			<u-button type="primary" shape="circle" text="点击登录" size="large" @click="login()"></u-button>
+		</view>
+		<view class="register">
+			<u--text text="没有账号?"></u--text>
+			<navigator url="/pages/register/register" open-type="navigate">立即注册</navigator>
+		</view>		
+	</view>	
 </template>
-
 <script>
 	export default {
 		name:"uni-loginapp",
@@ -29,11 +32,12 @@
 					password:''
 					}
 				},
-				longitude:"12",
-				latitude:"35"
+				longitude:"",
+				latitude:""
 			}
 		},
 		methods:{
+			
 			login() {
 				let _this=this;
 				//获取地理位置
@@ -68,18 +72,26 @@
 							},
 							success(res){
 								console.log(res)
-								let token=res.data.data.access_token;
-								_this.$store.state.token=token;
-								uni.showToast({
-									title:"登录成功"
-								})
-								//跳转页面
-								uni.switchTab({
-									url:"../../pages/home/home",
-									success() {
-										console.log("调用成功")
-									}
-								})
+								if(res.data.state==200){
+									let token=res.data.data.access_token;
+									_this.$store.state.token=token;
+									uni.showToast({
+										title:"登录成功"
+									})
+									//跳转页面
+									uni.switchTab({
+										url:"../../pages/home/home",
+										success() {
+											console.log("调用成功")
+										}
+									})
+								}else{
+									uni.showToast({
+										title:"密码或用户名错误！",
+										icon:"none"
+									})
+								}
+								
 							},fail() {
 								uni.showToast({
 									title:"失败"
@@ -94,5 +106,32 @@
 	}
 </script>
 <style>
-	
+	.title{
+		position: relative;
+		top:70rpx;
+		left: 280rpx;
+	}
+	.logo{
+		margin: 10rpx 30%;
+		position: relative;
+		top:50rpx;
+	}
+	.form{
+		position: relative;
+		top:100rpx;
+	}
+	.btn_login{
+		position: relative;
+		top:200rpx;
+		margin: 50rpx 80rpx;
+	}
+	.register{
+		position: relative;
+		bottom: 80rpx;
+		margin-left: 550rpx;
+	}
+	navigator{
+		font-size: 40rpx;
+		color: #007AFF;
+	}
 </style>

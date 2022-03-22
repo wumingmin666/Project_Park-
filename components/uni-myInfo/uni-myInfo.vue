@@ -2,7 +2,7 @@
 	<view class="my-userinfo-container">
 		<!-- 头像昵称区域 -->
 		<view class="top-box">
-			<uni-icons type="contact-filled" size="100" color="#829074"></uni-icons>
+			<uni-icons type="contact-filled" size="100" color="#00ffff"></uni-icons>
 			<!-- <image src="" class="avatar"></image> -->
 			<view class="nickname">xxx</view>
 		</view>
@@ -23,7 +23,6 @@
 			};
 		},
 		onLoad() {
-			
 			// uni.request({
 			// 	url:"",
 			// 	method:"GET"
@@ -45,16 +44,14 @@
 	.my-userinfo-container {
 		height: 100%;
 		// 为整个组件的结构添加浅灰色的背景
-		background-color: #f4f4f4;
-
+		background-color: #ffffff;
 		.top-box {
 			height: 400rpx;
-			background-color: #c00000;
+			background-color: #007AFF;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-
 			.avatar {
 				display: block;
 				width: 90px;
@@ -63,7 +60,6 @@
 				border: 2px solid white;
 				box-shadow: 0 1px 5px black;
 			}
-
 			.nickname {
 				color: white;
 				font-weight: bold;

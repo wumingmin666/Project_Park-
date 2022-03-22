@@ -12,7 +12,7 @@
 			};
 		},
 		onLoad: function (option) { //option为object类型，会序列化上个页面传递的参数
-				this.url="http://wmmdeboke.top:8081"+option.url;
+				this.url="http://39.105.152.242:8081"+option.url;
 			},
 	}
 </script>

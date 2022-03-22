@@ -1,13 +1,12 @@
 <template>
-	<view>
-		<div>
-			<h>name:{{name}}</h><br>
-			<h>placeDescribe:{{placeDescribe}}</h><br>
-			<h>picture:{{picture}}</h><br>
-			<a>{{url}}</a><br>
-			<button @click="tomap">进入地图</button>
-			<h>--------------------------</h>
-		</div>
+	<view class="item">
+		<view class="item-left">
+			<slot></slot>
+		</view>
+		<view class="item-right">
+			<u--text :text="name" class="name" type="primary"></u--text>
+			<u--text :text="'位置描述：'+placeDescribe" type="info"></u--text>
+		</view>
 	</view>
 </template>
 
@@ -19,19 +18,31 @@
 				
 			};
 		},
-		props: ['name','placeDescribe','picture','url'],
-		methods:{
-				
-			tomap(){
-				let _this=this;
-				uni.navigateTo({
-					url:"../../pages/map/map?url="+_this.url
-				})
-			}
-		}
+		props: ['name','placeDescribe'],
 	}
 </script>
 
 <style lang="scss">
-
+	.item {
+	    display: flex;
+	    padding: 10px 5px;
+	    border-bottom: 1px solid #f0f0f0;
+		
+	    // .item-right{
+	    // 	position: relative;
+	    // 	margin-left: 200rpx;
+	    // }
+	
+	    .item-right {
+	      display: flex;
+	      flex-direction: column;
+	      justify-content: space-between;
+	
+	      .name {
+	        font-size: 13px;
+	      }
+			
+	    }
+	}
+		
 </style>
